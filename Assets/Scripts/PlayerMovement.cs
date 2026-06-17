@@ -8,8 +8,19 @@ public class PlayerMovement : MonoBehaviour
     public int facingDirection = 1;
     public Rigidbody2D rb;
     public Animator anim;
-
     private bool isKnockedBack;
+
+    public PlayerCombat playerCombat;
+
+
+    // 在update中能更快获取到用户的操作
+    private void Update()
+    {
+        if (Input.GetButtonDown("Slash"))
+        {
+            playerCombat.Attack();
+        }
+    }
 
     // Update is called 50x frame
     void FixedUpdate()
