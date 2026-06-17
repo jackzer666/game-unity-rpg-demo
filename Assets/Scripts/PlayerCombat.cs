@@ -6,6 +6,10 @@ public class PlayerCombat : MonoBehaviour
 {
     public Transform attackPoint; // 攻击点？
     public float weaponRange = 1; // 攻击范围
+    public float knockbackForce = 20; // 击退力
+    public float knockbackTime = .5f; // 击退敌人的持续时间
+    public float stunTime = .5f; // 击退敌人后造成敌人的眩晕时间
+
     public LayerMask enemyLayer;
     public int damage = 1;
 
@@ -40,6 +44,7 @@ public class PlayerCombat : MonoBehaviour
         if (enemies.Length >0)
         {
             enemies[0].GetComponent<EnemyHealth>().ChangeHealth(-damage);
+            enemies[0].GetComponent<EnemyKnockback>().Knockback(transform, knockbackForce, knockbackTime, stunTime);
         }
     }
 

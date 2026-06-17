@@ -35,19 +35,23 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckForPlayer();
-        if (attackCooldownTimer > 0)
+        // 击退判断优先，否则敌人永远在追逐或攻击，无法被玩家的攻击击退
+        if (enemyState != EnemyState.Knockback) 
         {
-            attackCooldownTimer -= Time.deltaTime;
-        }
+            CheckForPlayer();
+            if (attackCooldownTimer > 0)
+            {
+                attackCooldownTimer -= Time.deltaTime;
+            }
 
-        if (enemyState == EnemyState.Chasing)
-        {
-            Chase();
-        }
-        else if (enemyState == EnemyState.Attacking)
-        {
-            rb.velocity = Vector2.zero;
+            if (enemyState == EnemyState.Chasing)
+            {
+                Chase();
+            }
+            else if (enemyState == EnemyState.Attacking)
+            {
+                rb.velocity = Vector2.zero;
+            }
         }
     }
     // 追逐方向处理与速度处理
@@ -95,7 +99,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    void ChangeState(EnemyState newState)
+    public void ChangeState(EnemyState newState)
     {
         enemyState = newState;
         anim.SetInteger("EnemyState", (int)newState);
@@ -114,4 +118,5 @@ public enum EnemyState: int
     Idle,
     Chasing,
     Attacking,
+    Knockback,
 }

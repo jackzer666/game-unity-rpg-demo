@@ -636,7 +636,7 @@ Tilemap:
       - {fileID: -666465880, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
       - {fileID: 1530419535, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
       - {fileID: -763514820, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -1, y: -5, z: 0}
@@ -666,7 +666,7 @@ Tilemap:
       - {fileID: -289502009, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
       - {fileID: -270027482, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
       - {fileID: 1820984241, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 11, y: -5, z: 0}
@@ -1970,6 +1970,7 @@ GameObject:
   - component: {fileID: 738263987}
   - component: {fileID: 738263988}
   - component: {fileID: 738263989}
+  - component: {fileID: 738263990}
   m_Layer: 7
   m_Name: Enemy_Torch
   m_TagString: Untagged
@@ -2216,8 +2217,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 229589ede20e846d789052bd7c6a82a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 2
-  maxHealth: 2
+  currentHealth: 10
+  maxHealth: 10
+--- !u!114 &738263990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738263980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dce077176e534313a2660236dbfe2bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &747098496
 GameObject:
   m_ObjectHideFlags: 0
@@ -4471,6 +4484,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 1434348014}
   weaponRange: 1
+  knockbackForce: 20
+  knockbackTime: 0.5
+  stunTime: 0.5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
