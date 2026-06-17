@@ -771,7 +771,7 @@ Tilemap:
       - {fileID: -722202998, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
       - {fileID: 1197474191, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
       - {fileID: -1979944388, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -2121,7 +2121,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   attackPoint: {fileID: 447003235}
-  weaponRange: 1.2
+  weaponRange: 0.8
+  knockbackForce: 20
+  stunTime: 0.2
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -4433,8 +4435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7359a0168a33b40da826fc6d56b05fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 3
-  maxHealth: 3
+  currentHealth: 20
+  maxHealth: 20
   healthText: {fileID: 747098498}
   healthTextAnim: {fileID: 747098500}
 --- !u!1 &992793555
