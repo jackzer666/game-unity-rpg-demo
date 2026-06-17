@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public Transform attackPoint; // 攻击点？
+    public float weaponRange = 1; // 攻击范围
+    public LayerMask enemyLayer;
+    public int damage = 1;
+
+
+
     public Animator anim;
     public float cooldown = 2; // 攻击冷却时间
     private float timer;
+
 
     private void Update()
     {
@@ -25,8 +33,24 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
+    public void DealDamage()
+    {
+        // 找到以攻击起点为半径圆内的敌人
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, weaponRange, enemyLayer);
+        if (enemies.Length >0)
+        {
+            enemies[0].GetComponent<EnemyHealth>().ChangeHealth(-damage);
+        }
+    }
+
     public void FinishAttacking()
     {
         anim.SetBool("isAttacking", false);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, weaponRange);
     }
 }

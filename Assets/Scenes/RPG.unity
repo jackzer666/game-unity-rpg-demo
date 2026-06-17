@@ -621,7 +621,7 @@ Tilemap:
       - {fileID: -722202998, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
       - {fileID: 1197474191, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
       - {fileID: -1979944388, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -2, y: -5, z: 0}
@@ -636,7 +636,7 @@ Tilemap:
       - {fileID: -666465880, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
       - {fileID: 1530419535, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
       - {fileID: -763514820, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -1, y: -5, z: 0}
@@ -666,7 +666,7 @@ Tilemap:
       - {fileID: -289502009, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
       - {fileID: -270027482, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
       - {fileID: 1820984241, guid: 6803fa994907a421aa169b649c81b5c3, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 11, y: -5, z: 0}
@@ -1969,7 +1969,8 @@ GameObject:
   - component: {fileID: 738263986}
   - component: {fileID: 738263987}
   - component: {fileID: 738263988}
-  m_Layer: 0
+  - component: {fileID: 738263989}
+  m_Layer: 7
   m_Name: Enemy_Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2203,6 +2204,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &738263989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738263980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229589ede20e846d789052bd7c6a82a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 2
+  maxHealth: 2
 --- !u!1 &747098496
 GameObject:
   m_ObjectHideFlags: 0
@@ -4322,7 +4337,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1434348014}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &855743501
@@ -4453,7 +4469,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bac6f1a45c25468db88a2a37dd6aaf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPoint: {fileID: 1434348014}
+  weaponRange: 1
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  damage: 1
   anim: {fileID: 855743504}
+  cooldown: 1
 --- !u!1 &992793555
 GameObject:
   m_ObjectHideFlags: 0
@@ -4764,6 +4787,37 @@ Transform:
   - {fileID: 412978942}
   - {fileID: 2061427782}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1434348013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1434348014}
+  m_Layer: 6
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1434348014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434348013}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.01, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 855743500}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1559117905
 GameObject:
