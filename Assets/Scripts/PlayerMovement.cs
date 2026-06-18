@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 5;
     public int facingDirection = 1;
     public Rigidbody2D rb;
     public Animator anim;
@@ -41,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
             bool isMoving = (horizontal != 0 || vertical != 0);
             anim.SetBool("isMoving", isMoving);
 
-            rb.velocity = new Vector2(horizontal, vertical) * speed;
+            rb.velocity = new Vector2(horizontal, vertical) * StatsManager.Instance.speed;
         }
     }
 

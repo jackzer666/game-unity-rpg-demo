@@ -4483,14 +4483,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 1434348014}
-  weaponRange: 1
-  knockbackForce: 20
-  knockbackTime: 0.5
-  stunTime: 0.5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  damage: 1
   anim: {fileID: 855743504}
   cooldown: 1
 --- !u!1 &992793555
@@ -4752,6 +4747,58 @@ MonoBehaviour:
   m_Damping: 0.5
   m_MaxWindowSize: -1
   m_Padding: 0
+--- !u!1 &1216161920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1216161921}
+  - component: {fileID: 1216161922}
+  m_Layer: 0
+  m_Name: StatsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1216161921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216161920}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.625394, y: 1.7539933, z: -0.04597694}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1216161922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216161920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05247e65a6f464639bcca3b0a66cf863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  weaponRange: 1
+  knockbackForce: 20
+  knockbackTime: 0.5
+  stunTime: 0.5
+  speed: 8
+  maxHealth: 20
+  currentHealth: 20
 --- !u!1 &1389452042
 GameObject:
   m_ObjectHideFlags: 0
@@ -5931,3 +5978,4 @@ SceneRoots:
   - {fileID: 738263983}
   - {fileID: 1035330259}
   - {fileID: 992793558}
+  - {fileID: 1216161921}

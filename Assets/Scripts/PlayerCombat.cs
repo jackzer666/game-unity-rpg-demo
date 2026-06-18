@@ -5,13 +5,7 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public Transform attackPoint; // 攻击点？
-    public float weaponRange = 1; // 攻击范围
-    public float knockbackForce = 20; // 击退力
-    public float knockbackTime = .5f; // 击退敌人的持续时间
-    public float stunTime = .5f; // 击退敌人后造成敌人的眩晕时间
-
     public LayerMask enemyLayer;
-    public int damage = 1;
 
 
 
@@ -40,11 +34,11 @@ public class PlayerCombat : MonoBehaviour
     public void DealDamage()
     {
         // 找到以攻击起点为半径圆内的敌人
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, weaponRange, enemyLayer);
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, StatsManager.Instance.weaponRange, enemyLayer);
         if (enemies.Length >0)
         {
-            enemies[0].GetComponent<EnemyHealth>().ChangeHealth(-damage);
-            enemies[0].GetComponent<EnemyKnockback>().Knockback(transform, knockbackForce, knockbackTime, stunTime);
+            enemies[0].GetComponent<EnemyHealth>().ChangeHealth(-StatsManager.Instance.damage);
+            enemies[0].GetComponent<EnemyKnockback>().Knockback(transform, StatsManager.Instance.knockbackForce, StatsManager.Instance.knockbackTime, StatsManager.Instance.stunTime);
         }
     }
 
@@ -56,6 +50,6 @@ public class PlayerCombat : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPoint.position, weaponRange);
+        Gizmos.DrawWireSphere(attackPoint.position, StatsManager.Instance.weaponRange);
     }
 }
