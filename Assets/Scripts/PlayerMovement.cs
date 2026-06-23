@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     // 在update中能更快获取到用户的操作
     private void Update()
     {
-        if (Input.GetButtonDown("Slash"))
+        if (Input.GetButtonDown("Slash") && playerCombat.enabled)
         {
             playerCombat.Attack();
         }

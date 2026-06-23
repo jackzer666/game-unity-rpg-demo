@@ -7034,7 +7034,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855743498}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bac6f1a45c25468db88a2a37dd6aaf0, type: 3}
   m_Name: 
@@ -8722,6 +8722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05247e65a6f464639bcca3b0a66cf863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 747098498}
   damage: 1
   weaponRange: 1
   knockbackForce: 20
@@ -8883,7 +8884,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 292847004}
   m_HandleRect: {fileID: 0}
@@ -9712,7 +9713,11 @@ PrefabInstance:
     - target: {fileID: 7942486373775225144, guid: 61e1a71018d404bf18631f594f533d65, type: 3}
       propertyPath: skillSO
       value: 
-      objectReference: {fileID: 11400000, guid: d19a567c4e98943499e8cfde5ba7503e, type: 2}
+      objectReference: {fileID: 11400000, guid: acfc3123766db49ebae2e9094d6f9601, type: 2}
+    - target: {fileID: 7942486373775225144, guid: 61e1a71018d404bf18631f594f533d65, type: 3}
+      propertyPath: isUnlocked
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12156,6 +12161,8 @@ GameObject:
   - component: {fileID: 2067636285}
   - component: {fileID: 2067636288}
   - component: {fileID: 2067636289}
+  - component: {fileID: 2067636290}
+  - component: {fileID: 2067636291}
   m_Layer: 0
   m_Name: SkillsCanvas
   m_TagString: Untagged
@@ -12254,9 +12261,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067636283}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &2067636289
 MonoBehaviour:
@@ -12297,6 +12304,32 @@ MonoBehaviour:
   - {fileID: 1269377412}
   pointsText: {fileID: 497719324}
   availablePoints: 100
+--- !u!114 &2067636290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067636283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec77a0236c58f4a33ae3440f39d23700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combat: {fileID: 855743506}
+--- !u!114 &2067636291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067636283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0953e76c679d34ed0884d7eb9367b38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsGroup: {fileID: 2067636288}
 --- !u!1001 &2071429407
 PrefabInstance:
   m_ObjectHideFlags: 0
