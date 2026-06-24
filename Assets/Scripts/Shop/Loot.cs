@@ -24,7 +24,7 @@ public class Loot : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             anim.Play("LootPickUp");
-            Destroy(gameObject, .5f);
+            Destroy(gameObject, .5f); // 动画结束后才销毁，因此加一个延时处理
         }
     }
 }
