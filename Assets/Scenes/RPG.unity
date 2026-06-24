@@ -2182,7 +2182,7 @@ GameObject:
   - component: {fileID: 404811473}
   - component: {fileID: 404811472}
   - component: {fileID: 404811474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision_High
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6840,6 +6840,7 @@ GameObject:
   - component: {fileID: 855743505}
   - component: {fileID: 855743506}
   - component: {fileID: 855743507}
+  - component: {fileID: 855743508}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -6966,6 +6967,7 @@ MonoBehaviour:
   facingDirection: 1
   rb: {fileID: 855743503}
   anim: {fileID: 855743504}
+  isShooting: 0
   playerCombat: {fileID: 855743506}
 --- !u!50 &855743503
 Rigidbody2D:
@@ -7061,7 +7063,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchPoint: {fileID: 1376238534}
   arrowPrefab: {fileID: 4644785386929799861, guid: 0309fe02e967347b2b465d1286bbd7c1, type: 3}
+  playerMovement: {fileID: 855743502}
   shootCooldown: 0.5
+  anim: {fileID: 855743504}
+--- !u!114 &855743508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855743498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59afd1ef5e0e74d84989f74b4b9ae96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCombat: {fileID: 855743506}
+  playerBow: {fileID: 855743507}
 --- !u!1 &864017479
 GameObject:
   m_ObjectHideFlags: 0
@@ -11713,7 +11731,7 @@ GameObject:
   - component: {fileID: 1909080342}
   - component: {fileID: 1909080341}
   - component: {fileID: 1909080343}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision_Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
